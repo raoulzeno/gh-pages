@@ -36,3 +36,55 @@
     transform: rotate(360deg);
   }
 }
+
+.blinking-cursor::after {
+  content: '|';
+  animation: blink 1.2s step-start infinite;
+}
+
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
+}
+
+.container {
+  display: grid;
+  grid-template-columns: 40px auto 40px;
+  grid-template-rows: 1fr 1fr;
+  margin-top: 40vh;
+}
+
+.landingHeader {
+  justify-self: start;
+  align-self: stretch;
+  font-size: 22px;
+  position: absolute;
+  left: 40px;
+  z-index: 5;
+}
+
+.headerSub {
+  grid-column: 2 / 3;
+  grid-row: 2 / 3;
+  margin-top: 50px;
+  justify-self: end;
+  font-size: 22px;
+  z-index: 5;
+}
+
+#zenDesign {
+  background: linear-gradient(to right, rgba(136,250,168,1), rgba(44,192,255,1));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+#zeno {
+  color: #7CFFD8;
+}
+
+.particles {
+  position: fixed;
+  width: 100%;
+  z-index: -1;
+}
